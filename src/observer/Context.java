@@ -7,6 +7,7 @@ import java.util.List;
  * Created by kaifashi on 2017/9/4.
  */
 public class Context {
+
     List<Observer> observerList = null;
 
 
