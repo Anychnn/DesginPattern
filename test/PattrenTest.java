@@ -1,3 +1,4 @@
+import decorator.*;
 import mediator.ConcreteMediator;
 import mediator.HouseOwner;
 import mediator.Tenant;
@@ -18,5 +19,18 @@ public class PattrenTest {
         mediator.registerTenant(tenant);
         mediator.sendMsgToTenant("hello ! i want to rent the house.");
         mediator.sendMsgToHouseOwner("a tenant wants to rent your house");
+    }
+
+
+    @Test
+    public void decoratorTest(){
+        Circle circle=new Circle();
+        Rectangle rectangle=new Rectangle();
+
+        Shape redCircle=new RedShapeDecorator(circle);
+        redCircle.draw();
+
+        Shape rotateRectangle=new RotateDecorator(rectangle);
+        rotateRectangle.draw();
     }
 }
